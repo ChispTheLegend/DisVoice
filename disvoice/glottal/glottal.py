@@ -6,8 +6,7 @@ import numpy as np
 import pandas as pd
 import pysptk
 import torch
-#from scipy.integrate import cumtrapz
-from scipy.integrate._quadrature import cumtrapz
+from scipy.integrate import cumtrapz
 from scipy.io.wavfile import read
 from tqdm import tqdm
 
