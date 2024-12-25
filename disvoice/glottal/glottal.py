@@ -6,7 +6,8 @@ import numpy as np
 import pandas as pd
 import pysptk
 import torch
-from scipy.integrate import cumtrapz
+from scipy.integrate import cumulative_trapezoid
+#from scipy.integrate import cumtrapz
 from scipy.io.wavfile import read
 from tqdm import tqdm
 
