@@ -5,7 +5,8 @@ import numpy as np
 
 import pysptk
 import os
-from scipy.integrate import cumtrapz
+#from scipy.integrate import cumtrapz
+from scipy.integrate import cumulative_trapezoid
 PATH = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(PATH)
 
