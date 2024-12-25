@@ -15,7 +15,6 @@ try:
     from scipy.signal.windows import medfilt, hann, filtfilt, blackman, hamming, buttord, butter, lfiltic, lfilter
 except:
     from scipy.signal import medfilt, hann, filtfilt, blackman, hamming, buttord, butter, lfiltic, lfilter
-'''
 
 try:
     from scipy.signal.windows import medfilt, hann, filtfilt, blackman, hamming, buttord, butter, lfiltic, lfilter
@@ -23,6 +22,18 @@ except ImportError:  # For SciPy < 1.14
     from scipy.signal import medfilt, filtfilt, blackman, hamming, buttord, butter, lfiltic, lfilter
     from scipy.signal.windows import hann  
     #hann is in windows submodule for older versions
+
+# /content/disvoice/disvoice/glottal/utils_gci.py
+'''
+
+try:
+    from scipy.signal import butter, lfiltic, lfilter, filtfilt, buttord #import functions present in scipy.signal for all versions
+    from scipy.signal.windows import blackman, hamming, hann #import window functions from scipy.signal.windows for scipy versions >= 1.1
+    from scipy.signal.signaltools import medfilt #import medfilt from the correct location in scipy.signal.signaltools for scipy versions >= 1.1
+except ImportError:  # For SciPy < 1.1
+    # If using very old SciPy, try the old imports (may not work for everything)
+    from scipy.signal import medfilt, filtfilt, blackman, hamming, buttord, butter, lfiltic, lfilter 
+    from scipy.signal import hann #older versions had hann directly under scipy.signal, newer versions have it under scipy.signal.windows
 
 def smooth(a,WSZ):
     # a: NumPy 1-D array containing the data to be smoothed
